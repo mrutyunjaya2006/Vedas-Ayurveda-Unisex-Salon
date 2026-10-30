@@ -1,0 +1,68 @@
+---
+import businessConfig from '../data/business-config.json';
+const stats = businessConfig.stats;
+---
+
+<section class="bg-[#2F2A26] text-[#F6F2EB] border-y border-[#4A3931] py-14 px-6">
+  <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto text-center">
+    {stats.map((stat: { value: number; suffix: string; label: string; isDecimal?: boolean }, i: number) => (
+      <div class="flex flex-col items-center">
+        <span
+          class="font-serif text-4xl md:text-5xl text-[#EBE0D6] mb-2"
+          data-target={stat.value}
+          data-suffix={stat.suffix}
+          data-decimal={stat.isDecimal ? 'true' : 'false'}
+          data-counter
+        >
+          0{stat.suffix}
+        </span>
+        <span class="text-xs uppercase tracking-[0.22em] text-[#D4C8BB]">
+          {stat.label}
+        </span>
+      </div>
+    ))}
+  </div>
+</section>
+
+<script>
+  function animateCounters() {
+    const counters = document.querySelectorAll('[data-counter]');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target as HTMLElement;
+          const target = parseFloat(el.dataset.target || '0');
+          const suffix = el.dataset.suffix || '';
+          const isDecimal = el.dataset.decimal === 'true';
+          const duration = 1800;
+          const start = performance.now();
+
+          function update(now: number) {
+            const elapsed = now - start;
+            const progress = Math.min(elapsed / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 3);
+            const current = eased * target;
+
+            if (isDecimal) {
+              el.textContent = current.toFixed(1) + suffix;
+            } else {
+              el.textContent = Math.floor(current).toLocaleString('en-IN') + suffix;
+            }
+
+            if (progress < 1) {
+              requestAnimationFrame(update);
+            }
+          }
+
+          requestAnimationFrame(update);
+          observer.unobserve(el);
+        }
+      });
+    }, { threshold: 0.3 });
+
+    counters.forEach(c => observer.observe(c));
+  }
+
+  document.addEventListener('DOMContentLoaded', animateCounters);
+  document.addEventListener('astro:page-load', animateCounters);
+</script>

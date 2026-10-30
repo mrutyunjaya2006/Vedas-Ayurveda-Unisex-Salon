@@ -1,0 +1,127 @@
+---
+import businessConfig from '../data/business-config.json';
+---
+
+<header class="fixed top-0 inset-x-0 z-50 transition-all duration-300 bg-[#F6F2EB]/95 backdrop-blur-md border-b border-[#D4C8BB]">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-[72px]">
+
+      <!-- Logo -->
+      <a href="#home" class="flex items-center gap-3 shrink-0 group">
+        <img
+          src="/assets/logo.png"
+          alt={businessConfig.name}
+          class="h-11 w-auto object-contain"
+          width="44"
+          height="44"
+          loading="eager"
+        />
+        <div class="hidden sm:flex flex-col leading-tight">
+          <span class="font-serif text-lg font-bold tracking-tight text-[#4A3931]">
+            {businessConfig.shortName}
+          </span>
+          <span class="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#4A6B2C]">
+            {businessConfig.tagline}
+          </span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden lg:flex items-center gap-7" aria-label="Primary Navigation">
+        {businessConfig.navigation.map((item: { label: string; href: string }) => (
+          <a
+            href={item.href}
+            class="text-sm font-medium text-[#4A3931] hover:text-[#2F2A26] tracking-wide transition-colors"
+          >
+            {item.label}
+          </a>
+        ))}
+      </nav>
+
+      <!-- Right: Book Now + Mobile Toggle -->
+      <div class="flex items-center gap-3">
+        <a
+          href={`https://wa.me/${businessConfig.whatsappNumber}?text=${encodeURIComponent('Hi Vedas Salon, I would like to book an appointment.')}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="hidden sm:inline-flex items-center gap-2 bg-[#2F2A26] hover:bg-[#3C3732] text-[#FFFDF9] px-6 py-2.5 rounded-full text-sm font-medium shadow-md hover:-translate-y-0.5 transition-all"
+        >
+          Book Now
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+
+        <!-- Mobile Menu Button -->
+        <button
+          id="mobile-menu-btn"
+          type="button"
+          class="lg:hidden flex items-center justify-center w-10 h-10 rounded-lg text-[#4A3931] hover:bg-[#EBE0D6] transition-colors"
+          aria-label="Open navigation menu"
+          aria-expanded="false"
+        >
+          <svg id="hamburger-icon" width="22" height="18" viewBox="0 0 22 18" fill="none">
+            <rect width="22" height="1.5" rx="0.75" fill="currentColor" />
+            <rect y="8" width="16" height="1.5" rx="0.75" fill="currentColor" />
+            <rect y="16" width="22" height="1.5" rx="0.75" fill="currentColor" />
+          </svg>
+          <svg id="close-icon" class="hidden" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+            <path d="M6 6l12 12M18 6L6 18" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Menu Drawer -->
+  <div
+    id="mobile-menu"
+    class="hidden lg:hidden fixed inset-0 top-[72px] bg-[#F6F2EB] z-40 border-t border-[#D4C8BB]"
+  >
+    <nav class="flex flex-col items-center justify-center gap-6 pt-12 px-6" aria-label="Mobile Navigation">
+      {businessConfig.navigation.map((item: { label: string; href: string }) => (
+        <a
+          href={item.href}
+          class="mobile-nav-link text-xl font-serif font-medium text-[#4A3931] hover:text-[#2F2A26] transition-colors"
+        >
+          {item.label}
+        </a>
+      ))}
+      <a
+        href={`https://wa.me/${businessConfig.whatsappNumber}?text=${encodeURIComponent('Hi Vedas Salon, I would like to book an appointment.')}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="mt-4 inline-flex items-center gap-2 bg-[#2F2A26] hover:bg-[#3C3732] text-[#FFFDF9] px-8 py-3 rounded-full text-sm font-medium shadow-md transition-all"
+      >
+        Book Now
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const menuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const hamburgerIcon = document.getElementById('hamburger-icon');
+  const closeIcon = document.getElementById('close-icon');
+
+  if (menuBtn && mobileMenu && hamburgerIcon && closeIcon) {
+    menuBtn.addEventListener('click', () => {
+      const isOpen = !mobileMenu.classList.contains('hidden');
+      mobileMenu.classList.toggle('hidden');
+      hamburgerIcon.classList.toggle('hidden');
+      closeIcon.classList.toggle('hidden');
+      menuBtn.setAttribute('aria-expanded', String(!isOpen));
+      document.body.style.overflow = isOpen ? '' : 'hidden';
+    });
+
+    mobileMenu.querySelectorAll('.mobile-nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        hamburgerIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+        menuBtn.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      });
+    });
+  }
+</script>

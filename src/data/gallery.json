@@ -1,0 +1,13 @@
+[
+  { "image": "/assets/hair curly.jpg", "title": "Balayage & Waves", "category": "Hair" },
+  { "image": "/assets/hair cut with barber.jpg", "title": "Men's Precision Cut", "category": "Grooming" },
+  { "image": "/assets/bride makeup.jpg", "title": "Bridal HD Makeup", "category": "Bridal" },
+  { "image": "/assets/nails.jpg", "title": "Nail Art Studio", "category": "Nails" },
+  { "image": "/assets/botx hair.jpg", "title": "Keratin Gloss Finish", "category": "Hair" },
+  { "image": "/assets/interior.jpg", "title": "Salon Interior", "category": "Studio" },
+  { "image": "/assets/facial.jpg", "title": "Luxury Facial Ritual", "category": "Skin" },
+  { "image": "/assets/proff hair drying and makeup.jpg", "title": "Blow-Dry & Styling", "category": "Hair" },
+  { "image": "/assets/spa.jpg", "title": "Full Body Spa", "category": "Spa" },
+  { "image": "/assets/bride make up 2.jpg", "title": "Bridal Reception Look", "category": "Bridal" }
+]
+

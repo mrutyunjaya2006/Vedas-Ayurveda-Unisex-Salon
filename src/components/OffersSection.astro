@@ -1,0 +1,60 @@
+---
+import servicesData from '../data/services.json';
+import businessConfig from '../data/business-config.json';
+const offers = servicesData.offers;
+---
+
+<section id="offers" class="bg-[var(--bg-primary)] py-16 lg:py-24 px-6 border-t border-[#D4C8BB]">
+  <div class="max-w-6xl mx-auto">
+    <!-- Section Header -->
+    <div class="text-center mb-12">
+      <p class="text-xs uppercase tracking-[0.2em] text-[#665B53] mb-3">Save More</p>
+      <h2 class="font-serif text-3xl sm:text-4xl text-[#4A3931] font-bold mb-4">
+        Special Offers & Packages
+      </h2>
+      <p class="text-[15px] text-[#665B53] max-w-lg mx-auto leading-relaxed">
+        Curated combos designed to give you more value. Book directly on WhatsApp to claim.
+      </p>
+    </div>
+
+    <!-- Offer Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {offers.map((offer: { id: string; title: string; services: string[]; originalPrice: string; offerPrice: string; validity: string }) => (
+        <div class="bg-[#FFFDF9] border border-[#D4C8BB] rounded-2xl p-7 flex flex-col justify-between shadow-sm">
+          <!-- Validity Tag -->
+          <div class="mb-5">
+            <span class="inline-block bg-[#EBE0D6] text-[#4A3931] text-[10px] uppercase tracking-[0.15em] px-3 py-1 rounded-full font-semibold mb-4">
+              {offer.validity}
+            </span>
+            <h3 class="font-serif text-xl text-[#4A3931] font-semibold mb-3">{offer.title}</h3>
+            <ul class="space-y-2">
+              {offer.services.map((s: string) => (
+                <li class="flex items-start gap-2.5">
+                  <svg class="w-4 h-4 text-[#4A6B2C] shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+                  <span class="text-xs text-[#665B53]">{s}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <!-- Pricing -->
+          <div class="pt-5 border-t border-[#D4C8BB]/60">
+            <div class="flex items-baseline gap-3 mb-4">
+              <span class="font-serif text-2xl font-bold text-[#4A3931]">{offer.offerPrice}</span>
+              <span class="text-sm text-[#665B53] line-through">{offer.originalPrice}</span>
+            </div>
+            <a
+              href={`https://wa.me/${businessConfig.whatsappNumber}?text=${encodeURIComponent(`Hi Vedas Salon, I am interested in your "${offer.title}" package (${offer.offerPrice}). Please share the details.`)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="w-full bg-[#2F2A26] hover:bg-[#3C3732] text-[#FFFDF9] text-xs font-medium py-3 rounded-full inline-flex items-center justify-center gap-2 transition-colors"
+            >
+              Claim Offer on WhatsApp
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,233 @@
+{
+  "categories": [
+    "ALL",
+    "POPULAR",
+    "HAIR",
+    "SKIN & BEAUTY",
+    "BRIDAL",
+    "SPA & BODY",
+    "NAILS & GROOMING"
+  ],
+  "items": [
+    {
+      "id": "signature-haircut",
+      "title": "Signature Haircut & Styling",
+      "category": "HAIR",
+      "isPopular": true,
+      "priceFrom": "499",
+      "duration": "45 min",
+      "description": "Precision cut tailored to your face shape, finished with a professional blow-dry.",
+      "features": [
+        "Style consultation",
+        "Wash & conditioning finish",
+        "Professional blow-dry"
+      ],
+      "image": "/assets/haircut.jpg"
+    },
+    {
+      "id": "global-color-balayage",
+      "title": "Global Hair Color & Balayage",
+      "category": "HAIR",
+      "isPopular": true,
+      "priceFrom": "2,499",
+      "duration": "120 min",
+      "description": "Full spectrum colouring and hand-painted highlights for natural dimension and shine.",
+      "features": [
+        "Ammonia-free colour options",
+        "Custom shade consultation",
+        "Post-colour gloss treatment"
+      ],
+      "image": "/assets/hair curly.jpg"
+    },
+    {
+      "id": "keratin-smoothing",
+      "title": "Keratin & Nanoplastia Smoothing",
+      "category": "HAIR",
+      "isPopular": true,
+      "priceFrom": "3,999",
+      "duration": "150 min",
+      "description": "Frizz elimination and deep smoothing that lasts 4-5 months with salon-grade keratin systems.",
+      "features": [
+        "Brazilian keratin formulation",
+        "Heat-sealed cuticle repair",
+        "90-day frizz-free guarantee"
+      ],
+      "image": "/assets/botx hair.jpg"
+    },
+    {
+      "id": "deep-conditioning-spa",
+      "title": "Deep Conditioning Hair Spa",
+      "category": "HAIR",
+      "isPopular": false,
+      "priceFrom": "899",
+      "duration": "60 min",
+      "description": "Intensive moisture and protein therapy to restore strength, elasticity, and mirror-like shine.",
+      "features": [
+        "Scalp detox massage",
+        "Steam-infused conditioning",
+        "Anti-breakage serum finish"
+      ],
+      "image": "/assets/hair masag.jpg"
+    },
+    {
+      "id": "luxury-hydrating-facial",
+      "title": "Luxury Hydrating Facial",
+      "category": "SKIN & BEAUTY",
+      "isPopular": false,
+      "priceFrom": "1,299",
+      "duration": "75 min",
+      "description": "Multi-step facial combining deep cleansing, exfoliation, extraction, and hydrating mask for a luminous complexion.",
+      "features": [
+        "Deep pore cleansing",
+        "Vitamin C serum infusion",
+        "Hydrating sheet mask finish"
+      ],
+      "image": "/assets/facial.jpg"
+    },
+    {
+      "id": "bridal-makeup",
+      "title": "HD Bridal & Reception Makeup",
+      "category": "BRIDAL",
+      "isPopular": true,
+      "priceFrom": "14,999",
+      "duration": "180 min",
+      "description": "Camera-ready HD airbrush bridal makeup with outfit draping, hairstyling, and jewellery setting.",
+      "features": [
+        "HD airbrush base",
+        "Custom hairstyle & setting",
+        "Touch-up kit provided"
+      ],
+      "image": "/assets/bride makeup.jpg"
+    },
+    {
+      "id": "engagement-styling",
+      "title": "Engagement & Party Styling",
+      "category": "BRIDAL",
+      "isPopular": false,
+      "priceFrom": "4,999",
+      "duration": "120 min",
+      "description": "Polished makeup and hair styling for engagement ceremonies, receptions, and family celebrations.",
+      "features": [
+        "Soft glam or statement look",
+        "Saree or lehenga draping",
+        "Long-wear setting spray"
+      ],
+      "image": "/assets/bride make up 2.jpg"
+    },
+    {
+      "id": "mens-grooming",
+      "title": "Men's Beard Sculpt & Grooming",
+      "category": "NAILS & GROOMING",
+      "isPopular": false,
+      "priceFrom": "399",
+      "duration": "40 min",
+      "description": "Sharp beard sculpting with precision edging, hot towel treatment, and finishing balm.",
+      "features": [
+        "Razor edge line-up",
+        "Hot towel compress",
+        "Beard conditioning balm"
+      ],
+      "image": "/assets/hair cut with barber.jpg"
+    },
+    {
+      "id": "gel-nail-extensions",
+      "title": "Gel Nail Extensions & Art",
+      "category": "NAILS & GROOMING",
+      "isPopular": false,
+      "priceFrom": "1,499",
+      "duration": "90 min",
+      "description": "Chip-resistant gel extensions with custom nail art, shape sculpting, and cuticle care.",
+      "features": [
+        "Custom tip shaping",
+        "Gel overlay & art",
+        "Cuticle treatment"
+      ],
+      "image": "/assets/nails.jpg"
+    },
+    {
+      "id": "full-body-spa",
+      "title": "De-Stress Full Body Polish & Spa",
+      "category": "SPA & BODY",
+      "isPopular": false,
+      "priceFrom": "2,999",
+      "duration": "120 min",
+      "description": "Head-to-toe relaxation with full body scrub, aromatherapy massage, and moisturizing wrap.",
+      "features": [
+        "Full body exfoliation",
+        "Warm oil aromatherapy",
+        "Hydrating body wrap"
+      ],
+      "image": "/assets/spa.jpg"
+    },
+    {
+      "id": "classic-manicure-pedicure",
+      "title": "Classic Manicure & Pedicure",
+      "category": "NAILS & GROOMING",
+      "isPopular": false,
+      "priceFrom": "699",
+      "duration": "60 min",
+      "description": "Complete hand and foot care with soak, shaping, cuticle grooming, and polish.",
+      "features": [
+        "Nail shaping & buffing",
+        "Callus removal",
+        "Hydrating cream massage"
+      ],
+      "image": "/assets/nails ready.jpg"
+    },
+    {
+      "id": "relaxation-head-massage",
+      "title": "Signature Scalp & Head Massage",
+      "category": "SPA & BODY",
+      "isPopular": false,
+      "priceFrom": "499",
+      "duration": "35 min",
+      "description": "Deep pressure scalp massage to relieve tension and promote healthy hair growth.",
+      "features": [
+        "Acupressure technique",
+        "Warm herbal oil",
+        "Neck & shoulder release"
+      ],
+      "image": "/assets/relaxed massage.jpg"
+    }
+  ],
+  "offers": [
+    {
+      "id": "student-combo",
+      "title": "Student Grooming Combo",
+      "services": [
+        "Haircut & Styling",
+        "D-Tan Clean-Up",
+        "Head Massage"
+      ],
+      "originalPrice": "1,397",
+      "offerPrice": "999",
+      "validity": "Valid for students with ID"
+    },
+    {
+      "id": "keratin-touchup",
+      "title": "Keratin + Root Touch-Up Package",
+      "services": [
+        "Keratin Smoothing",
+        "Root Touch-Up Color",
+        "Hair Spa Treatment"
+      ],
+      "originalPrice": "6,497",
+      "offerPrice": "4,999",
+      "validity": "Limited time offer"
+    },
+    {
+      "id": "pre-bridal",
+      "title": "Pre-Bridal Radiance Package",
+      "services": [
+        "3-Session Facial Course",
+        "Full Body Wax & Polish",
+        "Hair Spa & Conditioning",
+        "Manicure & Pedicure"
+      ],
+      "originalPrice": "8,996",
+      "offerPrice": "6,499",
+      "validity": "Book 2 weeks before wedding"
+    }
+  ]
+}
+

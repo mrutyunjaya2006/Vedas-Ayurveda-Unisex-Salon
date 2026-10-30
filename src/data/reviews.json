@@ -1,0 +1,57 @@
+{
+  "summary": {
+    "rating": "4.8",
+    "totalReviews": "1,000+",
+    "label": "Excellent"
+  },
+  "items": [
+    {
+      "id": 1,
+      "name": "Priyanka Sahoo",
+      "initial": "P",
+      "timeAgo": "2 weeks ago",
+      "text": "Best salon near Trident College area. Got a keratin treatment done and the result was absolutely smooth. Staff is well-trained and the pricing is very reasonable for the quality you get.",
+      "rating": 5
+    },
+    {
+      "id": 2,
+      "name": "Rajesh Mohanty",
+      "initial": "R",
+      "timeAgo": "1 month ago",
+      "text": "Been coming here for over 3 years for haircuts. The stylists understand exactly what you want without much explanation. Clean setup, no unnecessary upselling, and always on time.",
+      "rating": 5
+    },
+    {
+      "id": 3,
+      "name": "Smita Panda",
+      "initial": "S",
+      "timeAgo": "3 weeks ago",
+      "text": "Got my bridal makeup done at Vedas for my reception. The HD finish was flawless and lasted through the entire evening. Highly recommend their bridal packages.",
+      "rating": 5
+    },
+    {
+      "id": 4,
+      "name": "Aditya Mishra",
+      "initial": "A",
+      "timeAgo": "2 months ago",
+      "text": "Great place for men's grooming. Beard sculpting was done with precision. The hot towel finish is a nice touch. Pocket-friendly and professional service every time.",
+      "rating": 5
+    },
+    {
+      "id": 5,
+      "name": "Nibedita Das",
+      "initial": "N",
+      "timeAgo": "1 week ago",
+      "text": "The hair colour came out exactly how I wanted. They used ammonia-free products which made a huge difference. The salon interior is clean and well-maintained. Will definitely visit again.",
+      "rating": 5
+    },
+    {
+      "id": 6,
+      "name": "Bikash Jena",
+      "initial": "B",
+      "timeAgo": "3 months ago",
+      "text": "Visited for a hair spa and head massage after a recommendation from a friend. Very relaxing experience, and the staff was courteous throughout. Good value near Infocity area.",
+      "rating": 5
+    }
+  ]
+}

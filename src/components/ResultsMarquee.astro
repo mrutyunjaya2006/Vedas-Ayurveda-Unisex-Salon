@@ -1,0 +1,38 @@
+---
+import galleryData from '../data/gallery.json';
+const items = galleryData;
+---
+
+<section id="gallery" class="bg-[#2F2A26] py-20 overflow-hidden">
+  <div class="max-w-6xl mx-auto px-6 mb-12 text-center">
+    <p class="text-xs uppercase tracking-[0.2em] text-[#D4C8BB] mb-3">Portfolio</p>
+    <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#F6F2EB] font-bold mb-4">
+      Real Client Transformations & Studio Gallery
+    </h2>
+    <p class="text-[15px] text-[#D4C8BB] max-w-lg mx-auto leading-relaxed">
+      A selection of recent work from our stylists — haircuts, colour, bridal looks, and more.
+    </p>
+  </div>
+
+  <!-- Continuous Scrolling Track -->
+  <div class="relative">
+    <div class="flex gap-5 w-max animate-marquee hover:[animation-play-state:paused]">
+      {/* Render items twice for seamless loop */}
+      {[...items, ...items].map((item: { image: string; title: string; category: string }, i: number) => (
+        <div class="w-64 sm:w-72 h-80 rounded-2xl overflow-hidden relative group shrink-0 border border-[#4A3931]">
+          <img
+            src={item.image}
+            alt={item.title}
+            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            loading="lazy"
+          />
+          <!-- Caption overlay on hover -->
+          <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#2F2A26]/90 to-transparent p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+            <p class="text-sm font-medium text-[#FFFDF9]">{item.title}</p>
+            <p class="text-[10px] uppercase tracking-wider text-[#D4C8BB]">{item.category}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

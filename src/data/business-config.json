@@ -1,0 +1,34 @@
+{
+  "name": "Vedas Ayurveda Unisex Salon",
+  "shortName": "VEDAS AYURVEDA",
+  "tagline": "UNISEX SALON",
+  "phone": "+91 98610 00000",
+  "phoneRaw": "tel:+919861000000",
+  "whatsappNumber": "919861000000",
+  "whatsappUrl": "https://wa.me/919861000000",
+  "address": "F-19, Near Hotel 7 Saat, Behind Trident College, Chandrasekharpur, Bhubaneswar, Odisha 751024",
+  "landmark": "Near Hotel 7 Saat & Trident Academy, Infocity Road Area",
+  "city": "Bhubaneswar",
+  "googleMapsEmbedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3741.026!2d85.8059522!3d20.3407665!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a19098cef539997%3A0xd757aee3909a03af!2sVedas%20Ayurveda%20Unisex%20Salon!5e0!3m2!1sen!2sin!4v1700000000000",
+  "googleMapsDirectUrl": "https://www.google.com/maps/place/Vedas+Ayurveda+Unisex+Salon/@20.3407665,85.8059522,17z/data=!4m6!3m5!1s0x3a19098cef539997:0xd757aee3909a03af!8m2!3d20.3407659!4d85.8103996!16s%2Fg%2F11qg0kt7cj",
+  "instagramUrl": "https://www.instagram.com/vedas_ayurveda/reels/",
+  "hours": {
+    "weekdays": "Mon – Fri: 9:30 AM – 9:00 PM",
+    "weekends": "Sat – Sun: 9:00 AM – 9:30 PM"
+  },
+  "stats": [
+    { "value": 5000, "suffix": "+", "label": "HAPPY CUSTOMERS" },
+    { "value": 85, "suffix": "+", "label": "PREMIUM SERVICES" },
+    { "value": 11, "suffix": "+", "label": "YEARS OF EXPERIENCE" },
+    { "value": 4.8, "suffix": " \u2605", "label": "RATING (1,000+ RATED)", "isDecimal": true }
+  ],
+  "navigation": [
+    { "label": "Home", "href": "#home" },
+    { "label": "About Us", "href": "#about" },
+    { "label": "Services", "href": "#services" },
+    { "label": "Reviews", "href": "#reviews" },
+    { "label": "Gallery", "href": "#gallery" },
+    { "label": "Offers", "href": "#offers" },
+    { "label": "Contact Us", "href": "#contact" }
+  ]
+}

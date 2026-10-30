@@ -1,0 +1,151 @@
+---
+import servicesData from '../data/services.json';
+import businessConfig from '../data/business-config.json';
+const { categories, items } = servicesData;
+---
+
+<section id="services" class="bg-[#EBE0D6]/50 py-20 lg:py-28 px-6 border-t border-[#D4C8BB]">
+  <div class="max-w-7xl mx-auto">
+    <!-- Section Header -->
+    <div class="text-center mb-10">
+      <p class="text-xs uppercase tracking-[0.2em] text-[#665B53] mb-3">What We Offer</p>
+      <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#4A3931] font-bold mb-4">
+        Our Services & Pricing
+      </h2>
+      <p class="text-[15px] text-[#665B53] max-w-xl mx-auto leading-relaxed">
+        Transparent, flat-rate pricing. No hidden charges, no upselling — just exceptional craft
+        from senior stylists using premium products.
+      </p>
+    </div>
+
+    <!-- Category Filter Pills -->
+    <div class="flex flex-wrap justify-center gap-2.5 mb-12" role="tablist" aria-label="Service categories">
+      {categories.map((cat: string, i: number) => (
+        <button
+          type="button"
+          role="tab"
+          data-filter={cat}
+          class:list={[
+            'filter-pill px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider border transition-all cursor-pointer',
+            i === 0
+              ? 'bg-[#2F2A26] text-[#FFFDF9] border-[#2F2A26]'
+              : 'bg-[#FFFDF9] text-[#4A3931] border-[#D4C8BB] hover:border-[#4A3931]'
+          ]}
+          aria-selected={i === 0 ? 'true' : 'false'}
+        >
+          {cat}
+        </button>
+      ))}
+    </div>
+
+    <!-- Service Cards Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7" id="services-grid">
+      {items.map((svc: { id: string; title: string; category: string; isPopular: boolean; priceFrom: string; duration: string; description: string; features: string[]; image: string }) => (
+        <article
+          class="service-card bg-[#FFFDF9] border border-[#D4C8BB] rounded-2xl overflow-hidden flex flex-col justify-between transition-transform duration-200 hover:-translate-y-1 shadow-sm"
+          data-category={svc.category}
+          data-popular={svc.isPopular ? 'true' : 'false'}
+        >
+          <!-- Image Header -->
+          <div class="relative h-56 w-full overflow-hidden">
+            <img
+              src={svc.image}
+              alt={svc.title}
+              class="w-full h-full object-cover"
+              loading="lazy"
+            />
+            <!-- Category Badge -->
+            <span class="absolute top-3.5 left-3.5 bg-[#2F2A26]/80 text-[#F6F2EB] text-[10px] uppercase tracking-[0.15em] px-3 py-1 rounded-full">
+              {svc.category}
+            </span>
+            <!-- Popular Badge -->
+            {svc.isPopular && (
+              <span class="absolute top-3.5 right-3.5 bg-[#EBE0D6] text-[#2F2A26] text-[10px] uppercase tracking-[0.12em] px-3 py-1 rounded-full font-semibold">
+                Most Liked
+              </span>
+            )}
+            <!-- Bottom Gradient Overlay -->
+            <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#2F2A26]/95 via-[#2F2A26]/50 to-transparent p-5 flex items-end justify-between">
+              <h3 class="font-serif text-xl text-[#FFFDF9] font-medium leading-tight max-w-[65%]">
+                {svc.title}
+              </h3>
+              <div class="text-right shrink-0">
+                <span class="text-[10px] uppercase tracking-wider text-[#D4C8BB] block text-right">From</span>
+                <span class="font-serif text-xl text-[#EBE0D6] font-semibold">{svc.priceFrom}</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card Body -->
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <p class="text-sm text-[#665B53] mb-4 leading-relaxed">{svc.description}</p>
+            <ul class="space-y-2 mb-6">
+              {svc.features.map((f: string) => (
+                <li class="flex items-start gap-2.5">
+                  <svg class="w-4 h-4 text-[#4A6B2C] shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+                  <span class="text-xs text-[#4A3931]">{f}</span>
+                </li>
+              ))}
+            </ul>
+
+            <!-- Card Footer -->
+            <div class="pt-4 border-t border-[#D4C8BB]/60 flex items-center justify-between">
+              <span class="inline-flex items-center gap-1.5 text-xs text-[#665B53]">
+                <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                {svc.duration}
+              </span>
+              <a
+                href={`https://wa.me/${businessConfig.whatsappNumber}?text=${encodeURIComponent(`Hi Vedas Salon, I would like to book an appointment for ${svc.title} (Starting from ${svc.priceFrom}).`)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bg-[#2F2A26] hover:bg-[#3C3732] text-[#FFFDF9] text-xs font-medium px-5 py-2.5 rounded-full inline-flex items-center gap-1.5 transition-colors"
+              >
+                Book Now
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  function initServiceFilters() {
+    const pills = document.querySelectorAll('.filter-pill');
+    const cards = document.querySelectorAll('.service-card');
+
+    pills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        const filter = (pill as HTMLElement).dataset.filter || 'ALL';
+
+        pills.forEach(p => {
+          p.classList.remove('bg-[#2F2A26]', 'text-[#FFFDF9]', 'border-[#2F2A26]');
+          p.classList.add('bg-[#FFFDF9]', 'text-[#4A3931]', 'border-[#D4C8BB]');
+          p.setAttribute('aria-selected', 'false');
+        });
+        pill.classList.remove('bg-[#FFFDF9]', 'text-[#4A3931]', 'border-[#D4C8BB]');
+        pill.classList.add('bg-[#2F2A26]', 'text-[#FFFDF9]', 'border-[#2F2A26]');
+        pill.setAttribute('aria-selected', 'true');
+
+        cards.forEach(card => {
+          const el = card as HTMLElement;
+          const cat = el.dataset.category;
+          const popular = el.dataset.popular === 'true';
+
+          if (filter === 'ALL') {
+            el.style.display = '';
+          } else if (filter === 'POPULAR') {
+            el.style.display = popular ? '' : 'none';
+          } else {
+            el.style.display = cat === filter ? '' : 'none';
+          }
+        });
+      });
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', initServiceFilters);
+  document.addEventListener('astro:page-load', initServiceFilters);
+</script>

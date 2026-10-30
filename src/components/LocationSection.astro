@@ -1,0 +1,94 @@
+---
+import businessConfig from '../data/business-config.json';
+---
+
+<section id="contact" class="bg-[#EBE0D6]/45 py-20 lg:py-28 px-6 border-t border-[#D4C8BB]">
+  <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+
+    <!-- Left Column: Salon Photo + Address (5 cols) -->
+    <div class="lg:col-span-5">
+      <img
+        src="/assets/front board.png"
+        alt="Vedas Ayurveda Unisex Salon front signboard"
+        class="w-full aspect-[3/4] rounded-2xl overflow-hidden border border-[#D4C8BB] shadow-sm mb-6 object-cover"
+        loading="lazy"
+      />
+      <!-- Logo Wordmark -->
+      <div class="flex items-center gap-3 mb-4">
+        <img src="/assets/logo.png" alt="" class="h-9 w-auto" aria-hidden="true" />
+        <div>
+          <p class="font-serif text-lg font-bold text-[#4A3931] leading-tight">{businessConfig.shortName}</p>
+          <p class="text-[10px] font-semibold uppercase tracking-[0.15em] text-[#4A6B2C]">{businessConfig.tagline}</p>
+        </div>
+      </div>
+      <p class="text-sm text-[#4A3931] leading-relaxed mb-2">{businessConfig.address}</p>
+      <p class="text-xs text-[#665B53]">Easy two-wheeler & four-wheeler parking available right outside.</p>
+    </div>
+
+    <!-- Right Column: Content + Map (7 cols) -->
+    <div class="lg:col-span-7">
+      <p class="font-serif italic text-lg text-[#8C5E3C] mb-2">Our Location</p>
+      <h2 class="font-serif font-bold text-3xl sm:text-5xl text-[#4A3931] leading-tight mb-5">
+        You Are Always Welcome at VEDAS SALON
+      </h2>
+      <p class="text-base text-[#665B53] leading-relaxed mb-8">
+        Step into our warm, mirror-lit studio in Chandrasekharpur for precision haircuts,
+        transformative colour, bridal makeovers, and unhurried pampering. We are conveniently
+        located near Hotel 7 Saat and Trident Academy on Infocity Road.
+      </p>
+
+      <!-- Open Hours -->
+      <div class="mb-8">
+        <h3 class="text-xs font-bold uppercase tracking-[0.18em] text-[#4A3931] mb-3">Open Hours</h3>
+        <ul class="space-y-1.5 text-sm font-medium text-[#4A3931]">
+          <li class="flex items-center gap-2">
+            <svg class="w-4 h-4 text-[#665B53]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            {businessConfig.hours.weekdays}
+          </li>
+          <li class="flex items-center gap-2">
+            <svg class="w-4 h-4 text-[#665B53]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            {businessConfig.hours.weekends}
+          </li>
+        </ul>
+      </div>
+
+      <!-- Quick Action Buttons -->
+      <div class="flex flex-wrap gap-3 mb-8">
+        <a
+          href={businessConfig.phoneRaw}
+          class="inline-flex items-center gap-2 bg-[#2F2A26] hover:bg-[#3C3732] text-[#FFFDF9] text-xs font-medium px-5 py-2.5 rounded-full transition-colors"
+        >
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          Call Now
+        </a>
+        <a
+          href={businessConfig.googleMapsDirectUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 bg-[#FFFDF9] text-[#4A3931] border border-[#D4C8BB] hover:border-[#4A3931] text-xs font-medium px-5 py-2.5 rounded-full transition-colors"
+        >
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Open in Google Maps
+        </a>
+      </div>
+
+      <!-- Sub-Grid: Photo + Map -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+        <img
+          src="/assets/interior.jpg"
+          alt="Vedas Salon styling stations"
+          class="h-48 w-full object-cover rounded-xl border border-[#D4C8BB]"
+          loading="lazy"
+        />
+        <iframe
+          src={businessConfig.googleMapsEmbedUrl}
+          class="h-48 w-full rounded-xl border border-[#D4C8BB]"
+          allowfullscreen
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Vedas Ayurveda Unisex Salon location map"
+        ></iframe>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,37 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import StatsCounter from '../components/StatsCounter.astro';
+import AboutSection from '../components/AboutSection.astro';
+import ServicesSection from '../components/ServicesSection.astro';
+import OffersSection from '../components/OffersSection.astro';
+import ResultsMarquee from '../components/ResultsMarquee.astro';
+import ReviewsCarousel from '../components/ReviewsCarousel.astro';
+import LocationSection from '../components/LocationSection.astro';
+---
+
+<BaseLayout>
+  <!-- 1. Full-Bleed Impact Hero -->
+  <Hero />
+
+  <!-- 2. Animated Number Counter Strip -->
+  <StatsCounter />
+
+  <!-- 3. About Us Editorial Story & Salon Collage -->
+  <AboutSection />
+
+  <!-- 4. Interactive Services Menu with Category Filtering -->
+  <ServicesSection />
+
+  <!-- 5. Curated Special Offers & Packages -->
+  <OffersSection />
+
+  <!-- 6. Real Client Transformations Marquee Gallery -->
+  <ResultsMarquee />
+
+  <!-- 7. Google Reviews Carousel with Rating Bar -->
+  <ReviewsCarousel />
+
+  <!-- 8. Location, Hours, Directions & Live Map -->
+  <LocationSection />
+</BaseLayout>
